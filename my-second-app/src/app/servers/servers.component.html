@@ -1,3 +1,15 @@
+<!-- Passing and Using data with Event Binding -->
+<label for="">Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)"> 
+<!-- hide above code for two way data binding -->
+<p>{{ serverName }} </p>
+
+<!-- two way data binding -->
+<!-- <label for="">Server Name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName">  -->
+<!-- *************below************ -->
+<!-- <p>{{ serverName }} </p> -->
+
 <!-- Property binding & Event binding-->
 <button class="btn btn-success" [disabled]="!allowNewServer" (click)='onCreationServer()'>Add server</button> 
 <!-- string interpolation binding -->
