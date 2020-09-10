@@ -21,7 +21,8 @@ export class ServersComponent implements OnInit {
   //Event binding
   serverCreationStatus = 'No Server was created! ';
   onCreationServer(){
-    this.serverCreationStatus = 'Server was created! Name is '+ this.serverName;
+    this.serverCreationStatus = 'Server was created!';
+    // Name is '+ this.serverName;
   }
   // Passing and Using data with Event Binding
   serverName = "test server";
