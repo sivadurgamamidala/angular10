@@ -1,0 +1,11 @@
+<h3 style="color: dodgerblue; text-align: center;">Solution</h3>
+<div class="container">
+    <label for="">User Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="userName">
+    <p style="min-height: 24px;">{{ userName }} </p>
+    <button class="btn btn-outline-warning" [disabled]="userName===''" (click)="onResetingUserName()">Add User Name</button>
+
+    <p style="white-space: pre;">
+        {{ userNameData }}
+    </p>
+</div>
