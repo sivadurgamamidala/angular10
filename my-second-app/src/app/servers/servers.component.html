@@ -14,8 +14,11 @@
 <button class="btn btn-success" [disabled]="!allowNewServer" (click)='onCreationServer()'>Add server</button> 
 <!-- string interpolation binding -->
 <!-- <span style="margin-left: 20px; color: green; text-transform: uppercase;">{{ allowNewServer }}</span> -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<!-- commenting about paragraph for to add new paragraph and to know about directives -->
 <!-- Property binding -->
 <!-- <p [innerText]="allowNewServer"></p>  -->
+<!-- Directives: using ngIf to output data conditionally -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 <app-server></app-server>
 <app-server></app-server>
