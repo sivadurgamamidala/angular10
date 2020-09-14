@@ -5,4 +5,7 @@
 
 <!-- Data binding: string interpolation starts calling by method -->
 <!-- <p>{{'server'}} with Id {{ serverId }} is {{ getServerStatus() }} </p>  -->
-<p [ngStyle]="{backgroundColor: getColor()}" >{{'server'}} with Id {{ serverId }} is {{ getServerStatus() }} </p> 
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online : serverStatus === 'online'}">
+    <!-- ngClass only applicable when the condition comes true -->
+    {{'server'}} with Id {{ serverId }} is {{ getServerStatus() }} 
+</p> 
