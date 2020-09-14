@@ -4,4 +4,5 @@
 <!-- <p>{{'server'}} with Id {{ serverId }} is {{ serverStatus }} </p>  -->
 
 <!-- Data binding: string interpolation starts calling by method -->
-<p>{{'server'}} with Id {{ serverId }} is {{ getServerStatus() }} </p> 
+<!-- <p>{{'server'}} with Id {{ serverId }} is {{ getServerStatus() }} </p>  -->
+<p [ngStyle]="{backgroundColor: getColor()}" >{{'server'}} with Id {{ serverId }} is {{ getServerStatus() }} </p> 
