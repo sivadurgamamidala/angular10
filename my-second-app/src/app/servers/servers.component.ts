@@ -22,8 +22,11 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   //Event binding
   serverCreationStatus = 'No Server was created! ';
+  // outputting lists with ngFor
+  servers = ["testServer", "testServer1"];
   onCreationServer(){
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Server Name is '+ this.serverName;
   }
   // Passing and Using data with Event Binding
