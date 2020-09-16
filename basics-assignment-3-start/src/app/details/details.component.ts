@@ -11,7 +11,8 @@ export class DetailsComponent implements OnInit {
   logItem = [];
   onDisplayDetails(){
     this.onDisplay = !this.onDisplay;
-    this.logItem.push(this.logItem.length+1);
+    // this.logItem.push(this.logItem.length+1);
+    this.logItem.push(new Date());
   }
   constructor() { }
 

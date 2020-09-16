@@ -4,8 +4,13 @@
 <button class="btn btn-primary" (click) = "onDisplayDetails()">Display Details</button>
 
 <p *ngIf = "onDisplay" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore repellat fugit dolorem amet voluptates numquam voluptas, quia ab ad? Maxime sunt delectus modi debitis iusto corrupti vero porro est laborum?</p>
-<div *ngFor = "let logItems of logItem" [ngStyle] = '{backgroundColor: logItems > 4 ? "blue" : "transparent"}' [ngClass]= '{"item": logItems > 4 }'>
+<!-- Log all button clicks in an array and output that array below the secret paragraph (simply an incrementing number) -->
+<!-- <div *ngFor = "let logItems of logItem" [ngStyle] = '{backgroundColor: logItems > 4 ? "blue" : "transparent"}' [ngClass]= '{"item": logItems > 4 }'>
     {{ logItems }}. hai this is shiva
+</div> -->
+<!-- Log all button clicks in an array and output that array below the secret paragraph (log a timestamp) -->
+<div *ngFor = "let logItems of logItem; let i = index" [ngStyle] = '{backgroundColor: i >= 4 ? "blue" : "transparent"}' [ngClass]= '{"item": i >= 4 }'>
+    hai this is shiva. {{ logItems }} 
 </div>
 <!-- <button class="btn btn-success" (click)="onDisplayDetails()">Display details</button>
 <p *ngFor = "let logItems of logItem" [ngStyle]='{color: "bue" }' [ngClass]='{"item": logItem.length > 4}'>
