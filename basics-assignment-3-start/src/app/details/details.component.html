@@ -1,0 +1,13 @@
+<h3 style="text-transform: uppercase; color: teal;">solution:</h3>
+<h2 style="text-align: center; text-transform: uppercase; text-decoration: underline;">Display details</h2>
+<!-- <button class="btn btn-primary" (click) = "onDisplay = !onDisplay">Display Details</button> -->
+<button class="btn btn-primary" (click) = "onDisplayDetails()">Display Details</button>
+
+<p *ngIf = "onDisplay" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore repellat fugit dolorem amet voluptates numquam voluptas, quia ab ad? Maxime sunt delectus modi debitis iusto corrupti vero porro est laborum?</p>
+<div *ngFor = "let logItems of logItem" [ngStyle] = '{backgroundColor: logItems > 4 ? "blue" : "transparent"}' [ngClass]= '{"item": logItems > 4 }'>
+    {{ logItems }}. hai this is shiva
+</div>
+<!-- <button class="btn btn-success" (click)="onDisplayDetails()">Display details</button>
+<p *ngFor = "let logItems of logItem" [ngStyle]='{color: "bue" }' [ngClass]='{"item": logItem.length > 4}'>
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt at asperiores ab enim temporibus laudantium accusantium corporis officia, optio assumenda! Commodi nihil neque excepturi perferendis reiciendis facere, magnam sequi veniam?
+</p> -->
