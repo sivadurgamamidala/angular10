@@ -34,7 +34,7 @@ export class ServerElementComponent implements OnInit,
   @Input() name: string;
   @ViewChild('heading' ,{static: true}) header: ElementRef;
   constructor() {
-    console.log("constructor called!")
+    console.log("constructor called!");
    }
    ngOnChanges(changes: SimpleChanges){
     console.log("ngOnChnages called!");
