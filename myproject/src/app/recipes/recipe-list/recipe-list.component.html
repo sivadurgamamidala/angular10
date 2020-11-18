@@ -6,13 +6,13 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor = 'let recipe of recipes' >
-        <!-- *ngFor='let recipe of recipes' -->
+        <!-- <a href="#" class="list-group-item clearfix" *ngFor = 'let recipe of recipes' > -->
+        <!-- *ngFor='let recipe of recipes' *****commented twice***** -->
         
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">
-                    <!-- Recipe Name -->
-                    {{ recipe.name }}
+            <!-- <div class="pull-left">
+                <h4 class="list-group-item-heading"> -->
+                    <!-- Recipe Name *****commented twice***** -->
+                    <!-- {{ recipe.name }}
                 </h4>
                 <p class="list-group-item-text">
                     Description
@@ -24,10 +24,10 @@
                     [src] = "recipe.imagePath"
                     alt="{{ recipe.name }}" 
                     class="img-responsive" 
-                    style="max-height: 50px;">
-                    <!-- src="{{ recipe.imagePath }}"  -->
-            </span>
-        </a>
-        <app-recipe-item ></app-recipe-item>
+                    style="max-height: 50px;"> -->
+                    <!-- src="{{ recipe.imagePath }}" *****commented twice***** -->
+            <!-- </span>
+        </a> -->
+        <app-recipe-item *ngFor = 'let recipeEl of recipes' [recipe]="recipeEl"></app-recipe-item>
     </div>
 </div>
