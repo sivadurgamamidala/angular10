@@ -55,6 +55,13 @@
       <p [appBetterHighlight]="'red'" defaultColor="yellow" >
         styling me with better-highlight
       </p>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">the value is 5</p>
+        <p *ngSwitchCase="10">the value is 10</p>
+        <p *ngSwitchCase="100">the value is 100</p>
+        <p *ngSwitchCase="1000">the value is 1000</p>
+        <p *ngSwitchCase="default">the value is default</p>
+      </div>
     </div>
   </div>
 </div>
