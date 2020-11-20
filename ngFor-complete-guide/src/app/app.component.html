@@ -26,7 +26,13 @@
       <p app-basic-highlight>
         styling me with basic-highlight
       </p>
-      <p appBetterHighlight>
+      <!-- <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">
+        styling me with better-highlight
+      </p> -->
+      <!-- <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'" >
+        styling me with better-highlight
+      </p> -->
+      <p [appBetterHighlight]="'red'" defaultColor="yellow" >
         styling me with better-highlight
       </p>
     </div>
