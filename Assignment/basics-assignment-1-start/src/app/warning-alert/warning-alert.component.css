@@ -1,0 +1,9 @@
+p{
+    color: red;
+    text-align: center;
+    background-color: #ffdfdf;
+    border:1px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
