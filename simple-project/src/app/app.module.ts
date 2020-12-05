@@ -10,6 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { ServersComponent } from './servers/servers.component';
 import { UserComponent } from './users/user/user.component';
+import { ServersService } from './servers/servers.service';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServerComponent } from './servers/server/server.component'
 
 const appRoutes:Routes = [
   {path: "", component:HomeComponent},
@@ -25,7 +28,9 @@ const appRoutes:Routes = [
     HomeComponent,
     UsersComponent,
     ServersComponent,
-    UserComponent
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ const appRoutes:Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

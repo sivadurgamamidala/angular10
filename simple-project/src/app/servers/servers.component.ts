@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServersService } from './servers.service';
 
 @Component({
   selector: 'app-servers',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  public servers:{id:number, name:string, status:string}[]=[];
+  
 
-  constructor() { }
+constructor( private serverService:ServersService,
+            private router:Router
+  ){}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.servers = this.serverService.getServers();
   }
 
+  onReload(){
+    this.router.navigate(['server']);
+  }
 }
