@@ -10,16 +10,22 @@ import { UserService } from './user.service';
 export class AppComponent implements OnInit, OnDestroy {
   userActivated = false;
   private activatedSub : Subscription;
+  private deactivatedSub : Subscription;
+
 
   constructor(private userService:UserService){}
   
   ngOnInit(){
       this.activatedSub = this.userService.activatedEmitter.subscribe(didActivate => {
       this.userActivated = didActivate;
-    });
+      });
+      this.deactivatedSub = this.userService.deactivatedEmitter.subscribe(didDeactivate => {
+        this.userActivated = !didDeactivate;
+      });
   }
 
   ngOnDestroy(){
-    this.activatedSub.unsubscribe()
+    this.activatedSub.unsubscribe();
+    this.deactivatedSub.unsubscribe();
   }
 }

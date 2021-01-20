@@ -10,6 +10,7 @@ import { UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
   id : number;
+  buttonActivated = true;
   constructor(private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,11 @@ export class UserComponent implements OnInit {
   onActivate(){
     // this.userService.activatedEmitter.emit(true);
     this.userService.activatedEmitter.next(true);
-
+    this.buttonActivated = !this.buttonActivated
+  }
+  onDeactivate(){
+    this.userService.deactivatedEmitter.next(true);
+    this.buttonActivated = !this.buttonActivated
   }
 
 }
