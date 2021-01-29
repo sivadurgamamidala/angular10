@@ -7,7 +7,10 @@ import { RecipeService } from "./recipe.service";
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
-  providers: [RecipeService]
+  // providers: [RecipeService]
+  //we provide our recipe service in the recipe component. so all the component in this area share the same instance.
+  //but if we navigate away to the shopping list area the recipe component is destroyed.
+  //to rectified this we need to add recipeService in app.module.ts. so whole application will share the same instance.
 })
 export class RecipesComponent implements OnInit {
   selectedRecipe: Recipe;
