@@ -14,6 +14,12 @@ export class AppComponent {
       started: new Date(15, 1, 2017)
     },
     {
+      instanceType: 'medium',
+      name: 'Production',
+      status: 'critical',
+      started: new Date(15, 1, 2017)
+    },
+    {
       instanceType: 'large',
       name: 'User Database',
       status: 'stable',
