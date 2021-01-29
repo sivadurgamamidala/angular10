@@ -75,7 +75,23 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.recipeForm);
+    const newRecipe = new Recipe(
+      this.recipeForm.value['name'],
+      this.recipeForm.value['description'],
+      this.recipeForm.value['imagePath'],
+      this.recipeForm.value['ingredients']);
+    if (this.editMode) {
+      this.recipeService.updateRecipe(this.id, newRecipe);
+    } else {
+      this.recipeService.addRecipe(newRecipe);
+    }
+    //Above and below statements are works same, and the better approach is below 
+    //but for me this is not working
+    // if (this.editMode) {
+    //   this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+    // } else {
+    //   this.recipeService.addRecipe(this.recipeForm.value);
+    // }
   }
 
 }
