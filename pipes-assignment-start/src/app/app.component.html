@@ -7,20 +7,20 @@
       <br><br>
       <h2>App Status: {{ appStatus | async}}</h2>
       <hr>
-      <ul class="list-group">
-        <li
-          class="list-group-item"
-          *ngFor="let server of servers"
-          [ngClass]="getStatusClasses(server)">
-          <span
-            class="badge">
-            {{ server.status }}
-          </span>
-          <strong>{{ server.name }}</strong> |
-          {{ server.instanceType | uppercase | reverseString }} |
-          {{ server.started | date:'fullDate' | uppercase }}
-        </li>
-      </ul>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let server of servers | sortingNameOrder:'name'"
+            [ngClass]="getStatusClasses(server)">
+            <span
+              class="badge">
+              {{ server.status }}
+            </span>
+            <strong>{{ server.name }}</strong> |
+            {{ server.instanceType | uppercase | reverseString }} |
+            {{ server.started | date:'fullDate' | uppercase }}
+          </li>
+        </ul>
     </div>
   </div>
 </div>
