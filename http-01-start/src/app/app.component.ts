@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { Post } from './post.model';
+import { PostsService } from './posts.service';
 
 @Component({
   selector: 'app-root',
@@ -13,49 +14,52 @@ export class AppComponent implements OnInit {
   loadedPosts:Post[] = [];
   isFetching = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private postService:PostsService) {}
 
   ngOnInit() {
-    this.fetchPosts();
+    // this.fetchPosts();
+    this.postService.fetchPosts();
   }
 
   onCreatePost(postData: Post) {
     // Send Http request
     // console.log(postData);
-    this.http.post<{name: string}>('https://http-01start-default-rtdb.firebaseio.com/posts.json',
-    postData)
-      .subscribe(ResponseData => {
-        console.log(ResponseData);
-      })
-    
+    // this.http.post<{name: string}>('https://http-01start-default-rtdb.firebaseio.com/posts.json',
+    // postData)
+    //   .subscribe(ResponseData => {
+    //     console.log(ResponseData);
+    //   })
+    // calling from post service
+    this.postService.createAndStorePost(postData.title,postData.content);
   }
 
   onFetchPosts() {
     // Send Http request
-    this.fetchPosts();
+    // this.fetchPosts();
+    this.postService.fetchPosts();
   }
 
   onClearPosts() {
     // Send Http request
   }
 
-  private fetchPosts() {
-    this.isFetching = true;
-    this.http
-    .get<{[key: string]: Post}>('https://http-01start-default-rtdb.firebaseio.com/posts.json')
-    .pipe(map(responseData => {
-      const postsArray: Post[] = [];
-      for (const key in responseData) {
-        if( responseData.hasOwnProperty(key)) {
-          postsArray.push({...responseData[key], id: key})
-        }
-      }
-      return postsArray;
-    }))
-    .subscribe(posts => {
-      // console.log(posts);
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    });
-  }
+  // private fetchPosts() {
+  //   this.isFetching = true;
+  //   // this.http
+  //   // .get<{[key: string]: Post}>('https://http-01start-default-rtdb.firebaseio.com/posts.json')
+  //   // .pipe(map(responseData => {
+  //   //   const postsArray: Post[] = [];
+  //   //   for (const key in responseData) {
+  //   //     if( responseData.hasOwnProperty(key)) {
+  //   //       postsArray.push({...responseData[key], id: key})
+  //   //     }
+  //   //   }
+  //   //   return postsArray;
+  //   // }))
+  //   // .subscribe(posts => {
+  //   //   // console.log(posts);
+  //   //   this.isFetching = false;
+  //   //   this.loadedPosts = posts;
+  //   // });
+  // }
 }
