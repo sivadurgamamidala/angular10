@@ -14,15 +14,15 @@ export class PostsService {
 
     createAndStorePost(title:string, content:string) {
         const postData: Post = {title: title, content: content};
-        this.http.post<{name: string}>('https://http-01start-default-rtdb.firebaseio.com/posts.json',
-        postData)
-        .subscribe(ResponseData => {
-            console.log(ResponseData);
-        }, 
-        error => {
-            this.error.next(error.message);
-        }
-        )
+        this.http.post<{name: string}>('https://http-01start-default-rtdb.firebaseio.com/posts.json',postData)
+            .subscribe(
+                ResponseData => {
+                    console.log(ResponseData);
+                }, 
+                error => {
+                    this.error.next(error.message);
+                }
+            )
     }
 
     fetchPosts() {
