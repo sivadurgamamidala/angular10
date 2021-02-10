@@ -1,1 +1,3 @@
-<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<app-home *ngIf="loadedFeature === 'home'"></app-home>
+<app-preparation *ngIf="loadedFeature != 'home'"></app-preparation>
