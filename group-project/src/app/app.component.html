@@ -1,3 +1,11 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
-<app-home *ngIf="loadedFeature === 'home'"></app-home>
-<app-preparation *ngIf="loadedFeature != 'home'"></app-preparation>
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <app-home></app-home>
+            <app-preparation></app-preparation> -->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

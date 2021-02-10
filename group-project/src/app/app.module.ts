@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { PreparationComponent } from './preparation/preparation.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     HomeComponent,
     PreparationComponent,
     DropdownDirective,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
