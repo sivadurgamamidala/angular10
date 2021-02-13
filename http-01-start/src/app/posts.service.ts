@@ -36,7 +36,8 @@ export class PostsService {
             .get<{[key: string]: Post}>('https://http-01start-default-rtdb.firebaseio.com/posts.json',{
                 headers : new HttpHeaders({'Custom-header':'Hello'}),
                 // params : new HttpParams().set('print','pretty')
-                params : searchParams
+                params : searchParams,
+                responseType: 'json'
             })
             .pipe(
                 map(responseData => {
@@ -58,13 +59,14 @@ export class PostsService {
     deletePosts() {
         return this.http.delete('https://http-01start-default-rtdb.firebaseio.com/posts.json',
         {
-            observe: 'events'
+            observe: 'events',
+            responseType: 'text'
         }
         ).pipe(tap(event => {
             console.log(event);
             if (event.type === HttpEventType.Sent ) {
                 //....
-                console.log(event.type);
+                // console.log(event.type);
             }
             if (event.type === HttpEventType.Response ) {
                 console.log(event.body);
